@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public CharacterController rb;
     public float gravity;
     public float velocity = 2;
+    
 
     void Start() {}
 
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
         rb.Move(Movement * velocity * Time.deltaTime);
         
         G.y += gravity * Time.deltaTime;
+       
         rb.Move(G * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -25,4 +27,5 @@ public class Movement : MonoBehaviour
             rb.Move(-G * Time.deltaTime * 10);
         }
     }
+    
 }
