@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    public Vector2 rotation;
+    Vector2 rotation;
+    public GameObject cam;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class Rotation : MonoBehaviour
     {
         rotation.x += Input.GetAxis("Mouse X") * 5;
         rotation.y += Input.GetAxis("Mouse Y") * 5;
-        transform.localRotation = Quaternion.Euler(-rotation.y, rotation.x,0);
+        transform.localRotation = Quaternion.Euler(0, rotation.x, 0);
+        cam.transform.localRotation = Quaternion.Euler(-rotation.y, 0, 0);
     }
 }
