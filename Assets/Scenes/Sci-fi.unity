@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.673
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30799803, g: 0.3144595, b: 0.29579523, a: 0.673}
+  m_IndirectSpecularColor: {r: 0.30799833, g: 0.31445977, b: 0.29579538, a: 0.673}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5415,7 +5415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5435,15 +5435,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5460,7 +5460,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2080086456}
   m_SourcePrefab: {fileID: 100100000, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
 --- !u!1 &333636975
 GameObject:
@@ -22283,7 +22286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 3
-  Animatable: {fileID: 0}
+  CooldownDuration: 1
+  Animatable: {fileID: 2080086454}
 --- !u!1 &1327172741
 GameObject:
   m_ObjectHideFlags: 0
@@ -34461,6 +34465,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
   m_PrefabInstance: {fileID: 328268705}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2080086456
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080086454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d85c79193577fd341a94dc9c3bc7d911, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2084441075
 GameObject:
   m_ObjectHideFlags: 0
