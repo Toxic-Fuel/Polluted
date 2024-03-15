@@ -6,6 +6,8 @@ public class EnterBoat : MonoBehaviour
 {
     public GameObject player;
     public GameObject Cam;
+    public Transform objectA;
+    public Transform objectB;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,9 @@ public class EnterBoat : MonoBehaviour
             {
                 if (hit.distance < 5)
                 {
-                    Debug.Log("X");
-                    
+                     objectA.position = objectB.position;
+                     objectA.position = objectB.position + Vector3.down;
+                     objectA.parent = objectB;
                 }
             }
         }
