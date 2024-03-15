@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-C:\Users\Proto\Desktop\Coding\Projects\Unity\HackTUESX\oceanGameGIt\OceanGameHT
-=======
-C:\repos\hacktues4
->>>>>>> 141a447144245de5d57721d2d9e365b8b2c65756
+C:\Users\Martin\hacktues\OceanGameHT\Polluted
