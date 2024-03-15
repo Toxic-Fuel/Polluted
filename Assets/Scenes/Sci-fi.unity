@@ -5401,6 +5401,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321044349}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &328268705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1324358189}
+    m_Modifications:
+    - target: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_Name
+      value: saber 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
 --- !u!1 &333636975
 GameObject:
   m_ObjectHideFlags: 0
@@ -22205,7 +22266,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2080086455}
   m_Father: {fileID: 1424765454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1324358190
@@ -22221,6 +22283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 3
+  Animatable: {fileID: 0}
 --- !u!1 &1327172741
 GameObject:
   m_ObjectHideFlags: 0
@@ -34388,6 +34451,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076156812}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2080086454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+  m_PrefabInstance: {fileID: 328268705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2080086455 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6269047349673074557, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+  m_PrefabInstance: {fileID: 328268705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084441075
 GameObject:
   m_ObjectHideFlags: 0
@@ -36300,7 +36373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemInd: 0
-  LightS: {fileID: 5815701592958997886, guid: 7e23beff672e5b14ea64c83cb777c4d9, type: 3}
+  LightS: {fileID: 2080086454}
 --- !u!114 &7432430721380654290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36314,7 +36387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourseIndex: 0
-  Price: 010000000200000001000000
+  Price: 000000000000000000000000
   Texts:
   - {fileID: 6896371024546370909}
   - {fileID: 4745716282464409554}
