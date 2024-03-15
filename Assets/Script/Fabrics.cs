@@ -18,9 +18,10 @@ public class Fabrics : MonoBehaviour
         FabricHealth -= damage;
         if(FabricHealth<=0)
         {
-            Destroy(gameObject);
             numDestroyedFabrics++;
-            df.NewDestroyedFabric();
+            df.NewDestroyedFabric(this);
+
+            Destroy(gameObject);
         }
     }
     // Update is called once per frame

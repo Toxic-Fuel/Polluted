@@ -18,12 +18,11 @@ public class FabricsDestroyed : MonoBehaviour
     {
 
     }
-    public void NewDestroyedFabric()
+    public void NewDestroyedFabric(Fabrics fab)
     {
-        for(int i=0;i<fb.Count;i++)
-        {
-            count+=fb[i].numDestroyedFabrics;
-        }
+       
+          count+=fab.numDestroyedFabrics;
+        
         Texts.text=count.ToString();
     }
 }
