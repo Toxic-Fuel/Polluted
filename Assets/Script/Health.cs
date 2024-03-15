@@ -17,7 +17,6 @@ public class Health : MonoBehaviour
 
     public void TakeDam(float dmg)
     {
-        Debug.Log("hurka");
         health -= dmg;
         sl.value = health;
         if(health <= 0)

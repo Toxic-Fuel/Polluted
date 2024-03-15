@@ -6,6 +6,8 @@ public class Fabrics : MonoBehaviour
 {
     public float FabricMaxHealth;
     float FabricHealth;
+    public int numDestroyedFabrics=0;
+    public FabricsDestroyed df;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class Fabrics : MonoBehaviour
         if(FabricHealth<=0)
         {
             Destroy(gameObject);
+            numDestroyedFabrics++;
+            df.NewDestroyedFabric();
         }
     }
     // Update is called once per frame
