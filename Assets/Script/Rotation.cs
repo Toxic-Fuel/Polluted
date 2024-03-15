@@ -7,17 +7,28 @@ public class Rotation : MonoBehaviour
     Vector2 rotation;
     public GameObject cam;
     public bool usesCont = false;
-
+    public bool LockMode = true;
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!usesCont)
+        if (LockMode==true && Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Locked");
+            Cursor.lockState = CursorLockMode.None;
+            LockMode=false;
+        }else if(LockMode==false && Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Unlocked");
+            Cursor.lockState = CursorLockMode.Locked;
+            LockMode=true;
+        }
+        if (!usesCont && LockMode==true)
         {
             
             rotation.x += Input.GetAxis("Mouse X") * 5;
