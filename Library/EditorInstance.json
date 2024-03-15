@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
 	"process_id" : 17300,
+=======
+	"process_id" : 22676,
+>>>>>>> 141a447144245de5d57721d2d9e365b8b2c65756
 	"version" : "2022.3.10f1",
 	"app_path" : "C:/Users/Proto/Desktop/Telerik Academy/2022.3.10f1/Editor/Unity.exe",
 	"app_contents_path" : "C:/Users/Proto/Desktop/Telerik Academy/2022.3.10f1/Editor/Data"
