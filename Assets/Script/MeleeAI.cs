@@ -15,6 +15,7 @@ public class MeleeAI : MonoBehaviour
     public List<Animator> animations;
     public float CooldownDuration = 1f;
     public float Damage;
+    int AIrange = 3;
     bool cooldown = true;
     private Stopwatch timer=new Stopwatch();
     // Start is called before the first frame update
@@ -36,7 +37,7 @@ public class MeleeAI : MonoBehaviour
             AIHead.transform.rotation = Quaternion.Euler(-90, AIHead.transform.rotation.eulerAngles.y, AIHead.transform.rotation.eulerAngles.z);
             agent.SetDestination(player.transform.position);
         }
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) <= 6 && Mathf.Abs(player.transform.position.z - transform.position.z) <= 6)
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) <= AIrange && Mathf.Abs(player.transform.position.z - transform.position.z) <= AIrange)
         {
             for (int i = 0; i < animations.Count; i++)
             {

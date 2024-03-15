@@ -74,7 +74,7 @@ public class Movement : MonoBehaviour
             if (cooldown2)
             {
                 velocity = 10;
-                stamina -= 0.5f;
+                stamina -= 0.2f;
                 sb.Bar();
                 Startcooldown2();
             }
