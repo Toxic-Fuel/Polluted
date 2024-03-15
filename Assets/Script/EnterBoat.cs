@@ -22,7 +22,7 @@ public class EnterBoat : MonoBehaviour
             {
                 if (hit.distance < 5)
                 {
-                    Debug.Log("abcd");
+                    Debug.Log("X");
                     
                 }
             }
