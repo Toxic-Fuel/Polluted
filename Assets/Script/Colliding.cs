@@ -17,7 +17,7 @@ public class Colliding : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, -transform.up, out hit))
         {
-            Debug.Log(hit.distance);
+            //Debug.Log(hit.distance);
             if(hit.distance <= 1.11)
             {
                 move.isJumped = false;

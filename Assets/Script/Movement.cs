@@ -6,41 +6,82 @@ public class Movement : MonoBehaviour
 {
     public CharacterController rb;
     public float gravity;
-    public float velocity = 2;
+    float velocity;
     public bool sprint = false;
     public bool isJumped = false;
     public float JumpHight = 5f;
-    public int stamina = 100;
-    
+    public float stamina = 100f;
+    public Sprintbar sb;
+    public float CooldownDuration = 0.2f;
+    public float CooldownDuration2 = 0.2f;
+    bool cooldown = true;
+    bool cooldown2 = true;
+    bool run = false;
+    public float normal_velocity = 4;
 
-    void Start() {}
+
+    void Start() 
+    { 
+        velocity = normal_velocity;
+    }
 
     Vector3 G;
 
     void Update()
     {
-        stamina++;
+        if(stamina <= 0)
+        {
+            run = false;
+        }
+        else if(stamina > 0 && sprint)
+        {
+            run = true;
+        }
+
+        if (run && sprint)
+        {
+            velocity = 10;
+        }
+        else
+        {
+                velocity=normal_velocity;
+        }
+        if (cooldown)
+        {
+            if (stamina < 100)
+            {
+                stamina+=0.1f;
+                sb.Bar();
+            }
+            
+            StartCooldown();
+        }
+        
 
         Vector3 Movement = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         rb.Move(Movement * velocity * Time.deltaTime);
         
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetButtonDown("Sprint"))
         {
-            velocity = 10;
-            stamina -= 2;
+            sprint = true;
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            velocity = 4;
+            sprint = false;
         }
-
+        if (sprint == true)
+        {
+            if (cooldown2)
+            {
+                velocity = 10;
+                stamina -= 0.5f;
+                sb.Bar();
+                Startcooldown2();
+            }
+        }
         if (isJumped == false && Input.GetKeyDown(KeyCode.Space))
         {
             G.y = JumpHight;
-            RaycastHit ray;
-            if(Physics.Raycast(transform.position, -transform.up, out ray)){
-                Debug.Log("Jump: " + ray.distance);
-            }
             isJumped=true;
         }
         else
@@ -50,5 +91,16 @@ public class Movement : MonoBehaviour
         }
         rb.Move(G * Time.deltaTime);
     }
-    
+    public IEnumerator StartCooldown()
+    {
+        cooldown = false;
+        yield return new WaitForSeconds(CooldownDuration);
+        cooldown = true;
+    }
+    public IEnumerator Startcooldown2()
+    {
+        cooldown2 = false;
+        yield return new WaitForSeconds(CooldownDuration2);
+        cooldown2= true;
+    }
 }

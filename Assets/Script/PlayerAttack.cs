@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public float Damage = 3;
-    public int ResourseIndex;
+   
     // Start is called before the first frame update
     void Start()
     {

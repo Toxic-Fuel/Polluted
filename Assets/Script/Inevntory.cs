@@ -10,11 +10,16 @@ public class Inevntory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Refresh();
+        for(int i = 0; i<Resourses.Count; i++)
+        {
+            Resourses[i] = 0;
+        }
+        
+
     }
-    void Refresh()
+    public void Refresh()
     {
-        for (int i = 3; i > 0; i--)
+        for (int i = 2; i >= 0; i--)
         {
             Texts[i + (Stage * 3)].text = Resourses[i + Stage * 3].ToString();
         }

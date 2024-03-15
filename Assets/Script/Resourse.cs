@@ -13,17 +13,23 @@ public class Resourse : MonoBehaviour
     void Start()
     {
         Health = MaxHealth;
+        inv = GameObject.Find("Player").GetComponent<Inevntory>();
+
     }
     public void TakeDamage(float dmg)
     {
+        
         Health -= dmg;
-        if(Health <= 0 ) {
-            Destroy(gameObject);       
-        }
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if (Health <= 0)
+        {
+            inv.Resourses[ResourseIndex] += 1;
+            inv.Refresh();
+            Destroy(gameObject);
+        }
     }
 }
