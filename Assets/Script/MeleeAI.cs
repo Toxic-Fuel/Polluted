@@ -44,8 +44,6 @@ public class MeleeAI : MonoBehaviour
                 animations[i].Play("Base Layer.RoboAttack", 0);
 
             }
-            
-           UnityEngine.Debug.Log(timer.ElapsedMilliseconds);
             if (this.timer.ElapsedMilliseconds >= 1000)
             {
                 player.GetComponent<Health>().TakeDam(Damage);
@@ -60,11 +58,5 @@ public class MeleeAI : MonoBehaviour
                 animations[i].Play("Base Layer.New State", 0);
             }
         }
-    }
-    public IEnumerator StartCooldown()
-    {
-        cooldown = false;
-        yield return new WaitForSeconds(CooldownDuration);
-        cooldown = true;
     }
 }
