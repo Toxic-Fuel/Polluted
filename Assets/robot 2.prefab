@@ -1425,8 +1425,9 @@ MonoBehaviour:
   animations:
   - {fileID: 5566654033555670042}
   - {fileID: 1466802551900960893}
-  CooldownDuration: 1
+  CooldownDuration: 1000
   Damage: 2
+  LastTime: 0
 --- !u!195 &2364402710573289433
 NavMeshAgent:
   m_ObjectHideFlags: 0
