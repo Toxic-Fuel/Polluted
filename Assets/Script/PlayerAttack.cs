@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public SoundEffects se;
     public float Damage = 3;
     public float CooldownDuration = 1f;
     Stopwatch Timer= new Stopwatch();
     public GameObject Animatable;
     bool isHitting;
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Animatable.GetComponent<Animator>().Play("Swing", 0);
+            se.play_sound();
             isHitting = true;
             Timer.Restart();
             Timer.Start();
