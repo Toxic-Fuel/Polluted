@@ -18,6 +18,8 @@ public class MeleeAI : MonoBehaviour
     int AIrange = 3;
     bool cooldown = true;
     private Stopwatch timer=new Stopwatch();
+    public float MaxHealth = 10f;
+    float health;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class MeleeAI : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         Stopwatch timer = new Stopwatch();
         this.timer.Start();
+        health = MaxHealth;
     }
 
     // Update is called once per frame
@@ -57,6 +60,14 @@ public class MeleeAI : MonoBehaviour
             {
                 animations[i].Play("Base Layer.New State", 0);
             }
+        }
+    }
+    public void GetDamaged(float dmg)
+    {
+        health -= dmg;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

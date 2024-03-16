@@ -27,6 +27,20 @@ public class Inevntory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Resourses[0] += 1;
+            Refresh();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Resourses[1] += 1;
+            Refresh();
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Resourses[2] += 1;
+            Refresh();
+        }
     }
 }

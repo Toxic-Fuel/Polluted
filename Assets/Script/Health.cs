@@ -22,8 +22,13 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             health = 0;
+            FillArea.SetActive(false);
             gameOver = true;
             FillArea.SetActive(false);
+        }
+        else
+        {
+            FillArea.SetActive(true);
         }
         
     }
