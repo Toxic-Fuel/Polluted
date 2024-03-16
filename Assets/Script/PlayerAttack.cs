@@ -104,7 +104,6 @@ public class PlayerAttack : MonoBehaviour
         if (isHitting==false)
         {
             Animatable.GetComponent<Animator>().Play("New State", 0);
-            UnityEngine.Debug.Log("a");
             
         }
     }

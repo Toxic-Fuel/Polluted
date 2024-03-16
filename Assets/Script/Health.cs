@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
             health = 0;
             FillArea.SetActive(false);
             gameOver = true;
+            FillArea.SetActive(false);
         }
         else
         {
