@@ -57,6 +57,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (f != i)
                 {
+                    lightsaber=false;
                     weapons[f].SetActive(false);
                 }
             }
