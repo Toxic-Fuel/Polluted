@@ -8,6 +8,7 @@ public class Rotation : MonoBehaviour
     public GameObject cam;
     public bool usesCont = false;
     public bool LockMode = true;
+    public GameObject Inv;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,14 @@ public class Rotation : MonoBehaviour
         {
             Debug.Log("Locked");
             Cursor.lockState = CursorLockMode.None;
+            Inv.SetActive(true);
             LockMode=false;
         }else if(LockMode==false && Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("Unlocked");
             Cursor.lockState = CursorLockMode.Locked;
             LockMode=true;
+            Inv.SetActive(false);
         }
         if (!usesCont && LockMode==true)
         {

@@ -8,6 +8,8 @@ public class Fabrics : MonoBehaviour
     float FabricHealth;
     public int numDestroyedFabrics=0;
     public FabricsDestroyed df;
+    public GameObject Ruble;
+    public List<GameObject> toDel;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,12 @@ public class Fabrics : MonoBehaviour
         {
             numDestroyedFabrics++;
             df.NewDestroyedFabric(this);
-
-            Destroy(gameObject);
+            Ruble.SetActive(true);
+            for(int i =0; i < toDel.Count;i++)
+            {
+                toDel[i].SetActive(false);
+            }
+            
         }
     }
     // Update is called once per frame

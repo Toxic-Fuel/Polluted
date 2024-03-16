@@ -6,11 +6,24 @@ public class Item : MonoBehaviour
 {
     public int ItemInd;
     public GameObject LightS;
+    public GameObject Drill;
+    public PlayerAttack pa;
+    
+    public FabricsDestroyed fd;
     public void SpecificTask(int ite)
     {
         if (ite == 0)
         {
-            LightS.SetActive(true);
+            pa.weapons[0]=LightS;
+        }
+        if(ite == 1)
+        {
+            pa.weapons[1] = Drill;
+        }
+        if(ite == 2)
+        {
+            
+            fd.NewTurbine();
         }
     }
 }
