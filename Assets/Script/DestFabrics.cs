@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class FabricsDestroyed : MonoBehaviour
 {
     public List<Fabrics> fb;
     public TMPro.TMP_Text Texts;
     public TMPro.TMP_Text Texts2;
+    public GameObject WinScreen;
     int count=0;
     int countT = 0;
     // Start is called before the first frame update
@@ -43,7 +45,7 @@ public class FabricsDestroyed : MonoBehaviour
                     Texts2.text = countT.ToString();
                     if (countT == 3)
                     {
-                        Debug.Log("UAAUAUU");
+                        SceneManager.LoadScene(1);
                     }
                 }
                 

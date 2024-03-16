@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Animatable.GetComponent<Animator>().Play("Swing", 0);
             if(lightsaber==true){
-            se.play_sound();
+            //se.play_sound();
         }
             isHitting = true;
             Timer.Restart();
@@ -86,6 +86,7 @@ public class PlayerAttack : MonoBehaviour
                     if (hit.collider.gameObject.GetComponent<Resourse>() != null)
                     {
                         hit.collider.gameObject.GetComponent<Resourse>().TakeDamage(Damage);
+                        UnityEngine.Debug.Log("14");
                         
              
                     }else if(hit.collider.gameObject.GetComponent<Fabrics>() != null)

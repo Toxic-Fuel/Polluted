@@ -20,6 +20,7 @@ public class Resourse : MonoBehaviour
     {
         
         Health -= dmg;
+        Debug.Log("Taken dmg");
         
     }
     // Update is called once per frame

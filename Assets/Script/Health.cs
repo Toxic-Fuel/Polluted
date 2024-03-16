@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Health : MonoBehaviour
     public GameObject FillArea;
     float health;
     public bool gameOver = false;
+    
 
     void Start() {
         health = maxHealth;
@@ -25,6 +28,7 @@ public class Health : MonoBehaviour
             FillArea.SetActive(false);
             gameOver = true;
             FillArea.SetActive(false);
+            SceneManager.LoadScene(0);
         }
         else
         {
