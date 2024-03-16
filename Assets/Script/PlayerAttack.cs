@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public SoundEffects se;
     public float Damage = 3;
+    bool lightsaber = false;
     float HarmDamage = 0;
     public float CooldownDuration = 1f;
     public float CooldownDuration2 = 0.2f;
@@ -17,7 +19,6 @@ public class PlayerAttack : MonoBehaviour
     public List<GameObject> anims;
     
     bool isHitting;
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (f != i)
                 {
+                    lightsaber=true;
                     weapons[f].SetActive(false);
                 }
             }
@@ -63,6 +65,9 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Animatable.GetComponent<Animator>().Play("Swing", 0);
+            if(lightsaber==true){
+            se.play_sound();
+        }
             isHitting = true;
             Timer.Restart();
             Timer.Start();
