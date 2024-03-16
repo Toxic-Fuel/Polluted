@@ -21,7 +21,6 @@ public class EnterBoat : MonoBehaviour
     {
         if (isEntered==false && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("abcd");
             RaycastHit hit;
             if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit))
             {
@@ -29,7 +28,7 @@ public class EnterBoat : MonoBehaviour
                 {
                      mov.isPlayerInBoat=true;
                      isEntered=true;
-                     objectB.position=objectA.position+Vector3.up;
+                     objectB.position = objectA.position+Vector3.up;
                      objectA.parent = objectB;
                 }
             }
