@@ -24277,7 +24277,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 500
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -26420,6 +26420,8 @@ MonoBehaviour:
   CooldownDuration: 0.2
   CooldownDuration2: 0.2
   normal_velocity: 4
+  isPlayerInBoat: 0
+  G: {x: 0, y: 0, z: 0}
 --- !u!136 &1424765451
 CapsuleCollider:
   m_ObjectHideFlags: 0
