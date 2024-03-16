@@ -9,6 +9,7 @@ public class EnterBoat : MonoBehaviour
     public Transform objectA;
     public Transform objectB;
     bool isEntered=false;
+    public Movement mov;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class EnterBoat : MonoBehaviour
             {
                 if (hit.distance < 5 && hit.collider.gameObject.tag=="Boat")
                 {
+                     mov.isPlayerInBoat=true;
                      isEntered=true;
                      objectB.position=objectA.position+Vector3.up;
                      objectA.parent = objectB;
@@ -34,6 +36,10 @@ public class EnterBoat : MonoBehaviour
         {
                 objectA.SetParent(null);
                 isEntered=false;
+        }
+        if(isEntered==false)
+        {
+            mov.isPlayerInBoat=false;
         }
     }
 }

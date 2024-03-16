@@ -18,17 +18,18 @@ public class Movement : MonoBehaviour
     bool cooldown2 = true;
     bool run = false;
     public float normal_velocity = 4;
-
+    public bool isPlayerInBoat = false;
 
     void Start() 
     { 
         velocity = normal_velocity;
     }
 
-    Vector3 G;
+    public Vector3 G;
 
     void Update()
     {
+        if(isPlayerInBoat!=true){
         if(stamina <= 0)
         {
             run = false;
@@ -57,10 +58,10 @@ public class Movement : MonoBehaviour
             StartCooldown();
         }
         
-
+        }
         Vector3 Movement = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         rb.Move(Movement * velocity * Time.deltaTime);
-        
+        if(isPlayerInBoat!=true){
         if (Input.GetButtonDown("Sprint"))
         {
             sprint = true;
@@ -90,6 +91,7 @@ public class Movement : MonoBehaviour
             G.y += gravity * Time.deltaTime;
         }
         rb.Move(G * Time.deltaTime);
+    }
     }
     public IEnumerator StartCooldown()
     {
