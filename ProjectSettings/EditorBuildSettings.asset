@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Sci-fi.unity
     guid: 6708f2e0bcdd0954cb59de0cf021537a
   - enabled: 1
-    path: Assets/Scenes/Medival.unity
-    guid: 5641d51091976cf4f81e7ec2a13188ae
+    path: Assets/Scenes/Industrial.unity
+    guid: fd0f8c93ce744bf4f9290d0abaaaa23a
   m_configObjects: {}
