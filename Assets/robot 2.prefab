@@ -1095,7 +1095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1489767161392817154, guid: 066f11207a3a0144b8d22ec3d7349733, type: 3}
+  - {fileID: -6478536213147159724, guid: 2eb6d5568a6a4d348a431e2d546e5fbc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1427,6 +1427,7 @@ MonoBehaviour:
   - {fileID: 1466802551900960893}
   CooldownDuration: 1000
   Damage: 10
+  MaxHealth: 10
 --- !u!195 &2364402710573289433
 NavMeshAgent:
   m_ObjectHideFlags: 0
