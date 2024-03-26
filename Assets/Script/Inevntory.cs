@@ -7,6 +7,7 @@ public class Inevntory : MonoBehaviour
     public List<int> Resourses;
     public List<TMPro.TMP_Text> Texts;
     public int Stage=0;
+    public Cheats cheat;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Inevntory : MonoBehaviour
         {
             Resourses[i] = 0;
         }
-        
+        cheat = GameObject.Find("Canvas").GetComponent<Cheats>();
 
     }
     public void Refresh()
@@ -27,23 +28,27 @@ public class Inevntory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (cheat.hasCheat)
         {
-            Resourses[0] += 1;
-            Resourses[3] += 1;
-            Refresh();
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Resourses[0] += 1;
+                Resourses[3] += 1;
+                Refresh();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Resourses[1] += 1;
+                Resourses[4] += 1;
+                Refresh();
+            }
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                Resourses[2] += 1;
+                Resourses[5] += 1;
+                Refresh();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Resourses[1] += 1;
-            Resourses[4] += 1;
-            Refresh();
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            Resourses[2] += 1;
-            Resourses[5] += 1;
-            Refresh();
-        }
+       
     }
 }
