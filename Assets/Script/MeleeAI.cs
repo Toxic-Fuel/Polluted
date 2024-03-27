@@ -15,7 +15,7 @@ public class MeleeAI : MonoBehaviour
     public List<Animator> animations;
     public float CooldownDuration = 1f;
     public float Damage;
-    int AIrange = 3;
+    float AIrange = 3.5f;
     bool cooldown = true;
     private Stopwatch timer=new Stopwatch();
     public float MaxHealth = 10f;
@@ -45,7 +45,7 @@ public class MeleeAI : MonoBehaviour
             for (int i = 0; i < animations.Count; i++)
             {
                 animations[i].Play("Base Layer.RoboAttack", 0);
-
+                
             }
             if (this.timer.ElapsedMilliseconds >= 1000)
             {
