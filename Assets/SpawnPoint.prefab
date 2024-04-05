@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4364722221330131627}
   - component: {fileID: 3366040007518892897}
+  - component: {fileID: -2203731278021565430}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -46,3 +47,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robo: {fileID: 6675732954681593908, guid: c33c44dfad142194ea8c3680b7982262, type: 3}
   numRobos: 5
+--- !u!114 &-2203731278021565430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470354668209747070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c937ed18f689046827ef7e43b5c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: -1

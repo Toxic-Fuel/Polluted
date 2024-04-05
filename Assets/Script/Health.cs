@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
             FillArea.SetActive(false);
             gameOver = true;
             FillArea.SetActive(false);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Industrial.unity
     guid: fd0f8c93ce744bf4f9290d0abaaaa23a
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 4384fc9bb1fc0f843a03fa44fbc5347e
   m_configObjects: {}

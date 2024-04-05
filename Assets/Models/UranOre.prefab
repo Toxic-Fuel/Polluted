@@ -48,10 +48,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6093592463355912122, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1eb4488acce34fe4284b619eada3f305, type: 2}
+    - target: {fileID: -1806680513116206669, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
+    - target: {fileID: -804731622281664130, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
+    - target: {fileID: -678588488315902003, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
     - target: {fileID: 919132149155446097, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
       propertyPath: m_Name
       value: UranOre
       objectReference: {fileID: 0}
+    - target: {fileID: 6745302439343835087, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3462f2e563e42640820d6cb0955d4fb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 49ec81e5aee94e14da9578a9bca9e0b1, type: 3}

@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     }
     public void Options()
     {
-        Debug.Log("If you see this, then it works.");
+        SceneManager.LoadScene("Options");
     }
     public void Quit()
     {
