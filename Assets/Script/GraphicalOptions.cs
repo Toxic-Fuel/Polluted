@@ -16,18 +16,53 @@ public class GraphicalOptions : MonoBehaviour
     public Toggle ScreenSpaceRef;
     public Toggle Vignette;
     public bool IsDuringGame = false;
-    public PostProcessLayer PostProcessLayer;
-    bool DOF;
-    int Bloom;
-    bool SSR;
-    bool Vig;
+    public PostProcessProfile PostProcessProfile;
+    bool DOF = true;
+    int Bloom = 1;
+    bool SSR = false;
+    bool Vig = true;
 
      
-    private void Start()
+    void Awake()
     {
         string path = Application.persistentDataPath + "/graphics.txt";
         if (File.Exists(path))
         {
+            if (IsDuringGame)
+            {
+                QualitySettings.globalTextureMipmapLimit = int.Parse(ReadString(0));
+                TextureDropDown.value = QualitySettings.globalTextureMipmapLimit;
+                Application.targetFrameRate = int.Parse(ReadString(2));
+                Bloom = int.Parse(ReadString(3));
+                Debug.Log(ReadString(4) + "Start");
+                if (ReadString(4) == "True")
+                {
+                    DOF = true;
+                }
+                else if (ReadString(4) == "False")
+                {
+                    DOF = false;
+                }
+                if (ReadString(5) == "True")
+                {
+                    SSR = true;
+                }
+                else
+                {
+                    SSR = false;
+                }
+                if (ReadString(6) == "True")
+                {
+                    Vig = true;
+                    
+                }
+                else
+                {
+                    Vig = false;
+                    
+                }
+               
+            }
             QualitySettings.globalTextureMipmapLimit = int.Parse(ReadString(0));
             TextureDropDown.value = QualitySettings.globalTextureMipmapLimit;
             Application.targetFrameRate = int.Parse(ReadString(2));
@@ -52,12 +87,12 @@ public class GraphicalOptions : MonoBehaviour
             if (ReadString(6) == "True")
             {
                 Vig = true;
-                Debug.Log("Yeessss.. good.. good..");
+                
             }
             else
             {
                 Vig = false;
-                Debug.Log("NOOooooo...");
+                
             }
 
             BloomDropDown.value = Bloom;
@@ -85,10 +120,14 @@ public class GraphicalOptions : MonoBehaviour
             
         }
     }
+    public void Save()
+    {
+        WriteString();
+    }
     public void TextureChanged()
    {
         QualitySettings.globalTextureMipmapLimit = TextureDropDown.value;
-        WriteString();
+        
    }
     public void OnChangedVsyncFps()
     {
@@ -101,29 +140,29 @@ public class GraphicalOptions : MonoBehaviour
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = int.Parse(FPSCapInputField.text);
         }
-        WriteString();
+        
     }
     public void BloomChanged()
     {
         Bloom = BloomDropDown.value;     
-        WriteString();
+        
     }
     public void DOFChanged()
     {
         DOF = DepthOfField.isOn;
         Debug.Log("DOFs has changed...");
-        WriteString();
+        
     }
     public void SSRChanged()
     {
         SSR = ScreenSpaceRef.isOn;
-        WriteString();
+        
 
     }
     public void VigChanged()
     {
         Vig = Vignette.isOn;
-        WriteString();
+        
     }
     public void WriteString()
     {
@@ -140,7 +179,7 @@ public class GraphicalOptions : MonoBehaviour
         writer.WriteLine(QualitySettings.vSyncCount);
         writer.WriteLine(Application.targetFrameRate);
         writer.WriteLine(BloomDropDown.value);
-       // writer.WriteLine(DepthOfField.isOn);
+        writer.WriteLine(DepthOfField.isOn);
         writer.WriteLine(SSR);
         writer.WriteLine(Vig);
         writer.Close();
