@@ -6,19 +6,20 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public SoundEffects se;
+    public AudioSource Lightsaber_Swing;
     public float Damage = 3;
     bool lightsaber = false;
     float HarmDamage = 0;
     public float CooldownDuration = 1f;
     public float CooldownDuration2 = 0.2f;
-    Stopwatch Timer= new Stopwatch();
+    Stopwatch Timer = new Stopwatch();
     Stopwatch TimerAttack = new Stopwatch();
     public GameObject Animatable;
     public List<GameObject> weapons;
     public List<GameObject> anims;
-    
+
     bool isHitting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (f != i)
                 {
-                    lightsaber=true;
+                    lightsaber = true;
                     weapons[f].SetActive(false);
                 }
             }
@@ -53,54 +54,54 @@ public class PlayerAttack : MonoBehaviour
             Damage = 5;
             HarmDamage = 0;
             CooldownDuration2 = 0.2f;
-            for (int f = 0; f<weapons.Count; f++)
+            for (int f = 0; f < weapons.Count; f++)
             {
                 if (f != i)
                 {
-                    lightsaber=false;
+                    lightsaber = false;
                     weapons[f].SetActive(false);
                 }
             }
         }
-        
+
         if (Input.GetButtonDown("Fire1"))
         {
             Animatable.GetComponent<Animator>().Play("Swing", 0);
-            if(lightsaber==true){
-            //se.play_sound();
-        }
+            if (lightsaber == true)
+            {
+                Lightsaber_Swing.Play();
+            }
             isHitting = true;
             Timer.Restart();
             Timer.Start();
-            
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit) && TimerAttack.ElapsedMilliseconds >= CooldownDuration2 * 1000)
+            if (
+                Physics.Raycast(transform.position, transform.forward, out hit)
+                && TimerAttack.ElapsedMilliseconds >= CooldownDuration2 * 1000
+            )
             {
                 TimerAttack.Restart();
                 TimerAttack.Start();
                 if (hit.distance < 5)
                 {
-
                     UnityEngine.Debug.Log(CooldownDuration2 * 1000);
                     if (hit.collider.gameObject.GetComponent<Resourse>() != null)
                     {
                         hit.collider.gameObject.GetComponent<Resourse>().TakeDamage(Damage);
                         UnityEngine.Debug.Log("14");
-                        
-             
-                    }else if(hit.collider.gameObject.GetComponent<Fabrics>() != null)
+                    }
+                    else if (hit.collider.gameObject.GetComponent<Fabrics>() != null)
                     {
                         hit.collider.gameObject.GetComponent<Fabrics>().HitFabric(Damage);
-                    }else if(hit.collider.gameObject.GetComponent<MeleeAI>() != null)
+                    }
+                    else if (hit.collider.gameObject.GetComponent<MeleeAI>() != null)
                     {
                         hit.collider.gameObject.GetComponent<MeleeAI>().GetDamaged(HarmDamage);
-
                     }
                 }
             }
         }
-
 
         if (Timer.ElapsedMilliseconds >= CooldownDuration * 1000)
         {
@@ -108,12 +109,9 @@ public class PlayerAttack : MonoBehaviour
             Timer.Restart();
             Timer.Start();
         }
-        if (isHitting==false)
+        if (isHitting == false)
         {
             Animatable.GetComponent<Animator>().Play("New State", 0);
-            
         }
     }
-    
-   
 }
