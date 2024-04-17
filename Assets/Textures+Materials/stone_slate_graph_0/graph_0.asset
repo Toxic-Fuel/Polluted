@@ -180,7 +180,7 @@ MonoBehaviour:
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://stone_slate\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2700099760\" type=\"8\" value=\"12,12\" />\n 
     <presetinput identifier=\"$randomseed\" uid=\"4152514274\" type=\"4\" value=\"2792\"
-    />\n  <presetinput identifier=\"stone_color\" uid=\"3514579068\" type=\"2\" value=\"0.169811,0.169811,0.169811\"
+    />\n  <presetinput identifier=\"stone_color\" uid=\"3514579068\" type=\"2\" value=\"0.54717,0.544589,0.544589\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 2
           WidgetType: 3
-        Data: {x: 0.16981131, y: 0.16981131, z: 0.16981131}
+        Data: {x: 0.5471698, y: 0.5445888, z: 0.5445888}
         NumericalDescription:
           DefaultValue: {x: 0.351659, y: 0.355138, z: 0.372549}
           MinValue: {x: 0, y: 0, z: 0}

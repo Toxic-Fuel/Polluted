@@ -48,10 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1990968323811559735, guid: 4b9938b4b50077142a9a671b418188b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef8378df55efa6f43ba8b24d7cf63a21, type: 2}
     - target: {fileID: 919132149155446097, guid: 4b9938b4b50077142a9a671b418188b2, type: 3}
       propertyPath: m_Name
       value: Gumi
       objectReference: {fileID: 0}
+    - target: {fileID: 8521902485874960664, guid: 4b9938b4b50077142a9a671b418188b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef8378df55efa6f43ba8b24d7cf63a21, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 4b9938b4b50077142a9a671b418188b2, type: 3}
