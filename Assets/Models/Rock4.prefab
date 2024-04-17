@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7481870404374432490}
   - component: {fileID: 6685917251596959969}
   - component: {fileID: -290105477154215307}
+  - component: {fileID: 8158865362633917811}
   m_Layer: 0
   m_Name: Rock4
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 175016ad4de80d146901162ff16f17ee, type: 3}
+  - {fileID: 2100000, guid: 1eb4488acce34fe4284b619eada3f305, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +98,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: -1.34
+--- !u!64 &8158865362633917811
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196160702483253114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3214521003866156968, guid: 175016ad4de80d146901162ff16f17ee, type: 3}
