@@ -17,7 +17,7 @@ public class Fish : MonoBehaviour
     }
     private void Update()
     {
-        gameObject.transform.Translate(gameObject.transform.right * Time.deltaTime * Speed);
+        gameObject.transform.Translate(Time.deltaTime * Speed,0,0, Space.Self);
     }
     // Update is called once per frame
     void Despawn()

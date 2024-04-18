@@ -24,13 +24,13 @@ public class Item : MonoBehaviour
         if(ite == 2)
         {
             
-            fd.NewTurbine();
+            fd.NewTurbine(gameObject.GetComponent<Crafting>());
         }
         
         if (ite == 5)
         {
 
-            fd.NewTurbine();
+            fd.NewTurbine(gameObject.GetComponent<Crafting>());
         }
     }
 }

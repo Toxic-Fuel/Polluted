@@ -9,6 +9,7 @@ public class FabricsDestroyed : MonoBehaviour
     public TMPro.TMP_Text Texts;
     public TMPro.TMP_Text Texts2;
     public GameObject WinScreen;
+    
     int count=0;
     int countT = 0;
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class FabricsDestroyed : MonoBehaviour
 
         Texts.text = count.ToString();
     }
-    public void NewTurbine()
+    public void NewTurbine(Crafting craft)
     {
         RaycastHit hit;
         if (Physics.Raycast(GameObject.Find("Main Camera").transform.position, GameObject.Find("Main Camera").transform.forward, out hit))
@@ -43,9 +44,10 @@ public class FabricsDestroyed : MonoBehaviour
                     countT++;
                     hit.collider.gameObject.GetComponent<RubleScript>().Replace();
                     Texts2.text = countT.ToString();
+                    craft.BoughtTurbine();
                     if (countT == 3)
                     {
-                        SceneManager.LoadScene(1);
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                     }
                 }
                 

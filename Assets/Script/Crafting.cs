@@ -26,9 +26,14 @@ public class Crafting : MonoBehaviour
             inv.Resourses[Stage * 3] -= Price[0];
             inv.Resourses[(Stage * 3) + 1] -= Price[1];
             inv.Resourses[(Stage * 3) + 2] -= Price[2];
+
             inv.Refresh();
             gameObject.GetComponent<Item>().SpecificTask(itemind);
 
         }
+    }
+    public void BoughtTurbine()
+    {
+        //inv.Resourses[(Stage * 3) + 2] -= Price[2];
     }
 }
