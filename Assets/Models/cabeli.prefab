@@ -126,8 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
+  Health: 0
   ResourseIndex: 0
   inv: {fileID: 0}
+  Name: Cables
 --- !u!65 &585588206459187431
 BoxCollider:
   m_ObjectHideFlags: 0

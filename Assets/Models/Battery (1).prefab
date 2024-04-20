@@ -116,8 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 15
+  Health: 0
   ResourseIndex: 4
   inv: {fileID: 0}
+  Name: Batteries
 --- !u!65 &1029837322356444177
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using Unity.Burst.CompilerServices;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Animatable;
     public List<GameObject> weapons;
     public List<GameObject> anims;
+    public TMPro.TMP_Text healthText;
+    bool IsWithDrill = false;
 
     bool isHitting;
 
@@ -37,6 +41,7 @@ public class PlayerAttack : MonoBehaviour
             Damage = 1;
             HarmDamage = 4;
             CooldownDuration2 = 1f;
+            IsWithDrill = false;
             for (int f = 0; f < weapons.Count; f++)
             {
                 if (f != i)
@@ -45,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
                     weapons[f].SetActive(false);
                 }
             }
+            
         }
         if (Input.GetKeyDown("2"))
         {
@@ -54,6 +60,7 @@ public class PlayerAttack : MonoBehaviour
             Damage = 5;
             HarmDamage = 0;
             CooldownDuration2 = 0.2f;
+            IsWithDrill = true;
             for (int f = 0; f < weapons.Count; f++)
             {
                 if (f != i)
@@ -62,6 +69,7 @@ public class PlayerAttack : MonoBehaviour
                     weapons[f].SetActive(false);
                 }
             }
+            
         }
 
         if (Input.GetButtonDown("Fire1"))
@@ -93,7 +101,11 @@ public class PlayerAttack : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.GetComponent<Fabrics>() != null)
                     {
-                        hit.collider.gameObject.GetComponent<Fabrics>().HitFabric(Damage);
+                        if (IsWithDrill)
+                        {
+                            hit.collider.gameObject.GetComponent<Fabrics>().HitFabric(Damage);
+                        }
+                        
                     }
                     else if (hit.collider.gameObject.GetComponent<MeleeAI>() != null)
                     {
@@ -102,7 +114,36 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+        RaycastHit info;
+        if (
+            Physics.Raycast(transform.position, transform.forward, out info)
 
+        )
+        {
+            if (info.distance < 5)
+            {
+                Resourse resourse = info.collider.gameObject.GetComponent<Resourse>();
+                if (resourse != null)
+                {
+                    healthText.gameObject.SetActive(true);
+                    healthText.text = (resourse.Name + " Health: " + resourse.Health.ToString() + "/" + resourse.MaxHealth.ToString());
+                }
+                else if (info.collider.gameObject.GetComponent<Fabrics>() != null)
+                {
+                    Fabrics fabrics = info.collider.gameObject.GetComponent<Fabrics>();
+                    healthText.gameObject.SetActive(true);
+                    healthText.text = (fabrics.FactoryName + " Health: " + fabrics.FabricHealth.ToString() + "/" + fabrics.FabricMaxHealth.ToString());
+                }
+
+                else
+                {
+                    healthText.gameObject.SetActive(false);
+                }
+            }
+            else { healthText.gameObject.SetActive(false);}
+           
+            
+        }
         if (Timer.ElapsedMilliseconds >= CooldownDuration * 1000)
         {
             isHitting = false;

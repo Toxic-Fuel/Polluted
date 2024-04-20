@@ -5,9 +5,10 @@ using TMPro;
 public class Resourse : MonoBehaviour
 {
     public float MaxHealth;
-    float Health;
+    public float Health;
     public int ResourseIndex;
     public Inevntory inv;
+    public string Name;
     
     // Start is called before the first frame update
     void Start()

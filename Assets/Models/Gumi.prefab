@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 12
+  Health: 0
   ResourseIndex: 5
   inv: {fileID: 0}
+  Name: Tires
 --- !u!114 &2237499656984913757
 MonoBehaviour:
   m_ObjectHideFlags: 0

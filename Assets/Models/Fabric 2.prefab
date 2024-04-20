@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FabricMaxHealth: 30
+  FabricHealth: 0
   numDestroyedFabrics: 0
   df: {fileID: 0}
   Ruble: {fileID: 5201686479071649290}
@@ -395,6 +396,7 @@ MonoBehaviour:
   - {fileID: 5784952882575733732}
   - {fileID: 3202984891407077241}
   - {fileID: 8576582670041574790}
+  FactoryName: Generator
 --- !u!65 &7909025139625850935
 BoxCollider:
   m_ObjectHideFlags: 0

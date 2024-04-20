@@ -126,8 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 12
+  Health: 0
   ResourseIndex: 1
   inv: {fileID: 0}
+  Name: Scrap
 --- !u!114 &-5423356504419136571
 MonoBehaviour:
   m_ObjectHideFlags: 0

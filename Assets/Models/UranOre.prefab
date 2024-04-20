@@ -114,8 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 15
+  Health: 0
   ResourseIndex: 2
   inv: {fileID: 0}
+  Name: Uranium
 --- !u!114 &-170190617058269848
 MonoBehaviour:
   m_ObjectHideFlags: 0

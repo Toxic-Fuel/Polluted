@@ -5,11 +5,12 @@ using UnityEngine;
 public class Fabrics : MonoBehaviour
 {
     public float FabricMaxHealth;
-    float FabricHealth;
+    public float FabricHealth;
     public int numDestroyedFabrics=0;
     public FabricsDestroyed df;
     public GameObject Ruble;
     public List<GameObject> toDel;
+    public string FactoryName;
     // Start is called before the first frame update
     void Start()
     {

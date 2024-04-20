@@ -118,8 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
+  Health: 0
   ResourseIndex: 3
   inv: {fileID: 0}
+  Name: Bottles
 --- !u!65 &151235930476492583
 BoxCollider:
   m_ObjectHideFlags: 0
