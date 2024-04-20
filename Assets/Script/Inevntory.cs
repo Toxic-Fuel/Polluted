@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inevntory : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class Inevntory : MonoBehaviour
                 Resourses[2] += 1;
                 Resourses[5] += 1;
                 Refresh();
+            }
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
        
