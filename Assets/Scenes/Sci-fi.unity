@@ -33033,6 +33033,7 @@ MonoBehaviour:
   CooldownDuration2: 0.2
   normal_velocity: 4
   isPlayerInBoat: 0
+  isWithController: 1
   G: {x: 0, y: 0, z: 0}
 --- !u!136 &1424765451
 CapsuleCollider:
@@ -33162,7 +33163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1324358186}
-  usesCont: 0
+  usesCont: 1
   LockMode: 1
   Inv: {fileID: 6748649311026903589}
 --- !u!114 &1424765458

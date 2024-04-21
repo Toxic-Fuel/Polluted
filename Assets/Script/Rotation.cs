@@ -42,10 +42,11 @@ public class Rotation : MonoBehaviour
         }
         else
         {
+            Debug.Log(Input.GetAxis("JoyY"));
             rotation.x += Input.GetAxis("JoyX") * 5;
             rotation.y += Input.GetAxis("JoyY") * 5;
             transform.localRotation = Quaternion.Euler(0, rotation.x, 0);
-            cam.transform.localRotation = Quaternion.Euler(-rotation.y, 0, 0);
+            cam.transform.localRotation = Quaternion.Euler(Mathf.Max(-90, Mathf.Min(90, -rotation.y)), 0, 0);
         }
         
     }

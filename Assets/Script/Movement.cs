@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     bool run = false;
     public float normal_velocity = 4;
     public bool isPlayerInBoat = false;
+    public bool isWithController;
 
     void Start() 
     { 
@@ -64,11 +65,23 @@ public class Movement : MonoBehaviour
         if(isPlayerInBoat!=true){
         if (Input.GetButtonDown("Sprint"))
         {
-            sprint = true;
+                if (!isWithController)
+                {
+                    sprint = true;
+                }
+                else
+                {
+                    sprint = !sprint;
+                }
+            
         }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        else if(Input.GetButtonUp("Sprint"))
         {
-            sprint = false;
+                if (!isWithController)
+                {
+                    sprint = false;
+                }
+            
         }
         if (sprint == true)
         {
